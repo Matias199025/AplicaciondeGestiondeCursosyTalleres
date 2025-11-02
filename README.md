@@ -56,7 +56,42 @@ Método: `GET`
 Ruta: `/api/usuarios`
 Descripción: Obtener todos los usuarios.
 
+Instrucciones de Instalación y Ejecución
+
+Sigue estos pasos para poner a correr la aplicación en tu entorno local.
+
+### 1. Configuración General
+
+1.  Clonar este repositorio.
+2.  Abrir dos terminales separadas en VS Code: una para el `backend` y otra para el `frontend`.
+
+### 2. Ejecutar el Backend
+
+1.  **Navegar:** `cd backend`
+2.  **Instalar dependencias:** `npm install`
+3.  **Configurar `.env`:** Asegúrate de tener el archivo `.env` con la variable `MONGO_URI`.
+    ```
+    # Ejemplo de .env
+    MONGO_URI="mongodb+srv://cursoambox:cursoambox2025@cluster0.qqehml0.mongodb.net/gestionCursosDB?appName=Cluster0"
+    PORT=4000
+    ```
+4.  **Iniciar el servidor:** `npm run dev`
+    *El servidor se ejecutará en `http://localhost:4000`.*
+
+### 3. Ejecutar el Frontend (React)
+
+1.  **Navegar:** `cd frontend`
+2.  **Instalar dependencias:** `npm install`
+    *(Esto incluye React, React Router y Bootstrap).*
+3.  **Iniciar la aplicación:** `npm run dev`
+    *La aplicación se ejecutará en `http://localhost:5173` (o un puerto similar).*
 
 ## Conclusion sobre el Proyecto:
+Este proyecto me permitió consolidar el ciclo completo del desarrollo Full Stack. El mayor desafío fue entender la **lógica avanzada** requerida para las rutas especiales:
 
-Este proyecto me permitió consolidar el ciclo completo del desarrollo Full Stack. Siento que fue un trabajo complicado pero creo que pude integrar todo lo que aprendi en lo hicimos en el curso. Por esto le agradezco profe tengo que seguir aprendiendo mucho pero bueno me gusto mucho el curso y espero seguir perfeccionandome GRACIAS!!!.
+1.  **Filtros en la API:** Implementar la lógica para que una sola ruta (`/api/cursos`) pudiera manejar múltiples parámetros de búsqueda (tags, precio máximo, ordenamiento) usando `req.query` en Express.
+2.  **Referencia e Integridad:** Asegurar que cuando un usuario se inscribe, se valida el cupo y se actualizan dos entidades (`Curso` y `Usuario`) a la vez.
+3.  **Aggregations de Mongoose:** Fue complejo pero muy interesante usar la *pipeline de agregación* para obtener el reporte que cuenta los cursos por profesor, demostrando cómo Mongoose puede manejar consultas complejas.
+
+El uso de **Bootstrap** y el patrón **Hooks (`useState`, `useEffect`)** en React me ayudó a construir una interfaz rápida y funcional que consume la API de manera efectiva. ¡Siento que logré integrar todas las piezas del curso!
+El proyecto me permitió aprender mucho sobre desarrollo Full Stack. Siento que fue un trabajo complicado pero creo que pude integrar todo lo que aprendi en lo que hicimos en el curso. Por esto le agradezco profe tengo que seguir aprendiendo mucho pero bueno me gusto mucho el curso y espero seguir perfeccionandome GRACIAS!!!.
